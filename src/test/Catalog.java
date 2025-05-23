@@ -43,13 +43,19 @@ public class Catalog {
 		
 	}
 	
+	public static String findBookByID(int ISBN) {
+		Book book = catalog[ISBN];
+		if (book == null) return ("This ISBN is invalid");
+		else return book.getBook();
+	}
+	
 	public static void listAllBook() {
 		for (Book book : catalog) {
 			book.getBook();
 		}
 	}
 	
-	public int findBookBYGenre(String genre) {
+	public int findBookByGenre(String genre) {
 		for (Book book : catalog) {
 			if(book.genre == genre.toLowerCase()) {
 				return book.ISBN;
